@@ -5,7 +5,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Rafael Mac Menz</Authors>
     <Company>McMenz IT</Company>
-    <Description>A .NET Standard 2.1 collection of data access interfaces. Usefull to avoid infrasctrucutre data depency,</Description>
+    <Description>A .NET Standard 2.1 collection of data access interfaces. Useful to avoid infrastructure data dependency,</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReleaseNotes>First release contains IRepsitory, IUnitOfWork, IQuery, ICommand, and ISimpleMapper, IBlobStorage interfaces</PackageReleaseNotes>
     <NeutralLanguage>Portuguese (Brazil)</NeutralLanguage>
