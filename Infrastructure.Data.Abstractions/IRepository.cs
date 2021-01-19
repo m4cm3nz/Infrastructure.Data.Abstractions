@@ -1,4 +1,4 @@
-﻿namespace System.Data.Abstractions
+﻿namespace Infrastructure.Data.Abstractions
 {
     public interface IRepository { }
     public interface IRepository<TEntity> :

@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
 
-namespace System.Data.Abstractions
+namespace Infrastructure.Data.Abstractions
 {
     public interface IBlobStorage
     {

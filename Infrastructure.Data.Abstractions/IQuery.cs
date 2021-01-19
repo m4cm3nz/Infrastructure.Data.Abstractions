@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace System.Data.Abstractions
+namespace Infrastructure.Data.Abstractions
 {
     public interface IQuery { }
 
