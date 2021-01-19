@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Rafael Mac Menz</Authors>
     <Company>McMenz IT</Company>
@@ -12,6 +12,8 @@
     <RepositoryType>c#</RepositoryType>
     <PackageTags>repository, unitofwork, query, command, mapper, blobstorage</PackageTags>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <RepositoryUrl>https://github.com/m4cm3nz/Infrastructure.Data.Abstractions</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/m4cm3nz/Infrastructure.Data.Abstractions</PackageProjectUrl>
   </PropertyGroup>
 
 </Project>
