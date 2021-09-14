@@ -2,7 +2,7 @@
 
 namespace Infrastructure.Data.Abstractions
 {
-    public interface IBlobStorageRepository<TEntity> where TEntity: IKeyable
+    public interface IBlobStorageRepository<TEntity>
     {
         void AddQueuedWork(TEntity entity);
         Task<TEntity> GetByKey(string key);

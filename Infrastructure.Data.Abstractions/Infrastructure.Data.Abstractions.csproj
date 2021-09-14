@@ -7,16 +7,16 @@
     <Company>McMenz IT</Company>
     <Description>A .NET Standard 2.1 collection of data access interfaces. Useful to avoid infrastructure data dependency,</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReleaseNotes>First release contains IRepsitory, IUnitOfWork, IQuery, ICommand, and ISimpleMapper, IBlobStorage interfaces</PackageReleaseNotes>
+    <PackageReleaseNotes>Added new interfaces, IKeyable, IBlobStorageRepository, ICacheProvider and an SensitiveDataAttribute</PackageReleaseNotes>
     <NeutralLanguage>Portuguese (Brazil)</NeutralLanguage>
     <RepositoryType>c#</RepositoryType>
     <PackageTags>repository, unitofwork, query, command, mapper, blobstorage</PackageTags>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <RepositoryUrl>https://github.com/m4cm3nz/Infrastructure.Data.Abstractions</RepositoryUrl>
     <PackageProjectUrl>https://github.com/m4cm3nz/Infrastructure.Data.Abstractions</PackageProjectUrl>
-    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <AssemblyVersion>1.0.2.0</AssemblyVersion>
     <FileVersion>1.0.1.0</FileVersion>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
 </Project>
