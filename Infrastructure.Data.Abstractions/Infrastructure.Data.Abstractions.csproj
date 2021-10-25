@@ -1,22 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Rafael Mac Menz</Authors>
     <Company>McMenz IT</Company>
-    <Description>A .NET Standard 2.1 collection of data access interfaces. Useful to avoid infrastructure data dependency,</Description>
+    <Description>A .NET 5.0 collection of data access interfaces. Useful to avoid infrastructure data dependency,</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReleaseNotes>Added new interfaces, IKeyable, IBlobStorageRepository, ICacheProvider and an SensitiveDataAttribute</PackageReleaseNotes>
+    <PackageReleaseNotes>.net 5.0 upgrade</PackageReleaseNotes>
     <NeutralLanguage>Portuguese (Brazil)</NeutralLanguage>
     <RepositoryType>c#</RepositoryType>
     <PackageTags>repository, unitofwork, query, command, mapper, blobstorage</PackageTags>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <RepositoryUrl>https://github.com/m4cm3nz/Infrastructure.Data.Abstractions</RepositoryUrl>
     <PackageProjectUrl>https://github.com/m4cm3nz/Infrastructure.Data.Abstractions</PackageProjectUrl>
-    <AssemblyVersion>1.0.2.0</AssemblyVersion>
-    <FileVersion>1.0.1.0</FileVersion>
-    <Version>1.0.2</Version>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+    <Version>2.0</Version>
   </PropertyGroup>
 
 </Project>
