@@ -7,16 +7,16 @@
     <Company>McMenz IT</Company>
     <Description>A .NET 5.0 collection of data access interfaces. Useful to avoid infrastructure data dependency,</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReleaseNotes>.net 5.0 upgrade</PackageReleaseNotes>
+    <PackageReleaseNotes>Added new interface to dowload content binary data</PackageReleaseNotes>
     <NeutralLanguage>Portuguese (Brazil)</NeutralLanguage>
     <RepositoryType>c#</RepositoryType>
     <PackageTags>repository, unitofwork, query, command, mapper, blobstorage</PackageTags>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <RepositoryUrl>https://github.com/m4cm3nz/Infrastructure.Data.Abstractions</RepositoryUrl>
     <PackageProjectUrl>https://github.com/m4cm3nz/Infrastructure.Data.Abstractions</PackageProjectUrl>
-    <AssemblyVersion>2.0.0.0</AssemblyVersion>
-    <FileVersion>2.0.0.0</FileVersion>
-    <Version>2.0</Version>
+    <AssemblyVersion>2.0.1.0</AssemblyVersion>
+    <FileVersion>2.0.1.0</FileVersion>
+    <Version>2.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
