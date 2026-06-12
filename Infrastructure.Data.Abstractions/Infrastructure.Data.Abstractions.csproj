@@ -1,27 +1,27 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Rafael Mac Menz</Authors>
     <Company>McMenz IT</Company>
-    <Description>A .NET 8.0 collection of data access interfaces. Useful to avoid infrastructure data dependency,</Description>
+    <Description>A .NET 10.0 collection of data access interfaces. Useful to avoid infrastructure data dependency.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReleaseNotes>Upgrade to .net 8.0</PackageReleaseNotes>
+    <PackageReleaseNotes>Migrated to .NET 10. Added typed-key interfaces (IRepository&lt;TEntity, TKey&gt;, IQuery&lt;TEntity, TKey&gt;, ICommand&lt;TEntity, TKey&gt;). Dynamic-based interfaces deprecated.</PackageReleaseNotes>
     <NeutralLanguage>Portuguese (Brazil)</NeutralLanguage>
     <RepositoryType>c#</RepositoryType>
     <PackageTags>repository, unitofwork, query, command, mapper, blobstorage</PackageTags>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <RepositoryUrl>https://github.com/m4cm3nz/Infrastructure.Data.Abstractions</RepositoryUrl>
     <PackageProjectUrl>https://github.com/m4cm3nz/Infrastructure.Data.Abstractions</PackageProjectUrl>
-	<PackageReadmeFile>readme.md</PackageReadmeFile>
-    <AssemblyVersion>8.0.0.0</AssemblyVersion>
-    <FileVersion>8.0.0.0</FileVersion>
-    <Version>8.0</Version>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+    <FileVersion>10.0.0.0</FileVersion>
+    <Version>10.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Memory.Data" Version="8.0.0" />
+    <PackageReference Include="System.Memory.Data" Version="10.0.9" />
     <None Include="..\readme.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 

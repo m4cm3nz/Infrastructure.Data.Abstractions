@@ -1,0 +1,41 @@
+name: Publish to NuGet
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore -c Release
+
+      - name: Verify tag matches csproj version
+        run: |
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          CSPROJ_VERSION=$(grep -oP '(?<=<Version>)[^<]+' Infrastructure.Data.Abstractions/Infrastructure.Data.Abstractions.csproj)
+          echo "Tag version:    $TAG_VERSION"
+          echo "Csproj version: $CSPROJ_VERSION"
+          if [ "$TAG_VERSION" != "$CSPROJ_VERSION" ]; then
+            echo "ERROR: tag '$TAG_VERSION' does not match csproj version '$CSPROJ_VERSION'"
+            exit 1
+          fi
+
+      - name: Pack
+        run: dotnet pack Infrastructure.Data.Abstractions/Infrastructure.Data.Abstractions.csproj --no-build -c Release
+
+      - name: Push to NuGet
+        run: dotnet nuget push "Infrastructure.Data.Abstractions/bin/Release/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
