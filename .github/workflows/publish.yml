@@ -1,27 +1,29 @@
-name: Publish to NuGet
+name: Publish NuGet Package
 
 on:
   push:
     tags:
-      - 'v*'
+      - 'v*.*.*'
 
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # required for NuGet Trusted Publishing (OIDC)
+      contents: read
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+      - uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: '10.0.x'
+          dotnet-version: '10.x'
 
       - name: Restore
         run: dotnet restore
 
       - name: Build
-        run: dotnet build --no-restore -c Release
+        run: dotnet build -c Release --no-restore
 
       - name: Verify tag matches csproj version
         run: |
@@ -35,7 +37,13 @@ jobs:
           fi
 
       - name: Pack
-        run: dotnet pack Infrastructure.Data.Abstractions/Infrastructure.Data.Abstractions.csproj --no-build -c Release
+        run: dotnet pack Infrastructure.Data.Abstractions/Infrastructure.Data.Abstractions.csproj -c Release --no-build -o ./nupkg
+
+      - name: NuGet login
+        uses: NuGet/login@v1.2.0
+        id: login
+        with:
+          user: ${{ secrets.NUGET_USER }}
 
       - name: Push to NuGet
-        run: dotnet nuget push "Infrastructure.Data.Abstractions/bin/Release/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+        run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
