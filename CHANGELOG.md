@@ -9,7 +9,7 @@
 ### Breaking changes
 
 - Upgraded target framework from .NET 8.0 to .NET 10.0.
-- `System.Memory.Data` package dependency removed — `BinaryData` is part of the .NET 10 BCL.
+- `System.Memory.Data` dependency updated from `8.0.0` to `10.0.9`.
 
 ### New features
 
