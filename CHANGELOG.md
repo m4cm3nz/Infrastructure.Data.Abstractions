@@ -15,6 +15,10 @@
 
 All new members are default interface methods that delegate to the existing members. Existing implementations compile without changes. Override the new members to get true asynchronous and cancellable behavior.
 
+### Improvements
+
+- The package ships XML documentation (`Infrastructure.Data.Abstractions.xml`), so consumers see the doc comments in IntelliSense. The README is packed from `README.md`, and `NeutralLanguage` is `en`.
+
 ---
 
 ## [10.0.0] — 2026-06-12
