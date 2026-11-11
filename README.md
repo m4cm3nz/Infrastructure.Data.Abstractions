@@ -75,22 +75,59 @@ public class OrderService(IUnitOfWork uow, IRepository<Order, int> orders)
 
 ### IBlobStorage
 
-Upload and download files from a binary store.
+Upload, download, and check files in a binary store.
 
 ```csharp
 public class ReportService(IBlobStorage storage)
 {
-    public async Task SaveReport(Report report, string fileName)
+    public async Task SaveReport(Report report, string fileName, CancellationToken cancellationToken)
     {
-        await storage.Upload(report, fileName);
+        await storage.Upload(report, fileName, cancellationToken);
     }
 
-    public async Task<Stream> LoadReport(string fileName)
+    public async Task<Stream?> LoadReport(string fileName, CancellationToken cancellationToken)
     {
-        return await storage.Download(fileName);
+        if (!await storage.ExistsAsync(fileName, cancellationToken))
+            return null;
+
+        return await storage.Download(fileName, cancellationToken);
     }
 }
 ```
+
+| Member | Since | Notes |
+|---|---|---|
+| `Upload<T>(content, fileName)` | 6.0.0 | |
+| `Download(fileName)` | 6.0.0 | |
+| `Exists(fileName)` | 6.0.0 | Synchronous. Prefer `ExistsAsync`. |
+| `Upload<T>(content, fileName, cancellationToken)` | 10.1.0 | Default implementation calls `Upload<T>(content, fileName)`. |
+| `Download(fileName, cancellationToken)` | 10.1.0 | Default implementation calls `Download(fileName)`. |
+| `ExistsAsync(fileName, cancellationToken = default)` | 10.1.0 | Default implementation returns `Exists(fileName)`. |
+
+---
+
+### IDownloadContent
+
+Download a file as `BinaryData`.
+
+| Member | Since | Notes |
+|---|---|---|
+| `DownloadContent(fileName)` | 6.0.0 | |
+| `DownloadContent(fileName, cancellationToken)` | 10.1.0 | Default implementation calls `DownloadContent(fileName)`. |
+
+The 10.1.0 members are default interface methods, so existing implementations compile without changes. Override them to get true asynchronous and cancellable behavior:
+
+```csharp
+public class AzureBlobStorage : IBlobStorage, IDownloadContent
+{
+    // existing members ...
+
+    public async Task<bool> ExistsAsync(string fileName, CancellationToken cancellationToken = default)
+        => await container.GetBlobClient(fileName).ExistsAsync(cancellationToken);
+}
+```
+
+Call the new members through the interface type (`IBlobStorage`, `IDownloadContent`). A default interface method is not visible on the implementing class unless the class declares it.
 
 ---
 
