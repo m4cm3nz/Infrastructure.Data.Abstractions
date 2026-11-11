@@ -4,6 +4,19 @@
 
 ---
 
+## [10.1.0] — 2026-11-11
+
+### New features
+
+- `IBlobStorage.ExistsAsync(string fileName, CancellationToken cancellationToken = default)`: asynchronous existence check.
+- `IBlobStorage.Upload<T>(T content, string fileName, CancellationToken cancellationToken)`: upload with cancellation support.
+- `IBlobStorage.Download(string fileName, CancellationToken cancellationToken)`: download with cancellation support.
+- `IDownloadContent.DownloadContent(string fileName, CancellationToken cancellationToken)`: content download with cancellation support.
+
+All new members are default interface methods that delegate to the existing members. Existing implementations compile without changes. Override the new members to get true asynchronous and cancellable behavior.
+
+---
+
 ## [10.0.0] — 2026-06-12
 
 ### Breaking changes

@@ -7,7 +7,7 @@
     <Company>McMenz IT</Company>
     <Description>A .NET 10.0 collection of data access interfaces. Useful to avoid infrastructure data dependency.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReleaseNotes>Migrated to .NET 10. Added typed-key interfaces (IRepository&lt;TEntity, TKey&gt;, IQuery&lt;TEntity, TKey&gt;, ICommand&lt;TEntity, TKey&gt;). Dynamic-based interfaces deprecated.</PackageReleaseNotes>
+    <PackageReleaseNotes>Added ExistsAsync and CancellationToken overloads to IBlobStorage and IDownloadContent as default interface methods. Existing implementations compile without changes.</PackageReleaseNotes>
     <NeutralLanguage>Portuguese (Brazil)</NeutralLanguage>
     <RepositoryType>c#</RepositoryType>
     <PackageTags>repository, unitofwork, query, command, mapper, blobstorage</PackageTags>
@@ -15,9 +15,9 @@
     <RepositoryUrl>https://github.com/m4cm3nz/Infrastructure.Data.Abstractions</RepositoryUrl>
     <PackageProjectUrl>https://github.com/m4cm3nz/Infrastructure.Data.Abstractions</PackageProjectUrl>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
-    <AssemblyVersion>10.0.0.0</AssemblyVersion>
-    <FileVersion>10.0.0.0</FileVersion>
-    <Version>10.0.0</Version>
+    <AssemblyVersion>10.1.0.0</AssemblyVersion>
+    <FileVersion>10.1.0.0</FileVersion>
+    <Version>10.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
